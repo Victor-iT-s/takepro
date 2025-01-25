@@ -1,3 +1,63 @@
+.loaderArea {
+    background: linear-gradient(90deg, #FF4E50 10%, #F9D423 90%);
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right:0;
+    bottom:0;
+    z-index: 100000;
+  }
+  .loader {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    left: 50%;
+    margin-left: -20px;
+    top: 50%;
+    margin-top: -20px;
+  }
+   
+  .loader:before,
+  .loader:after {
+    content: "";
+    height: 40px;
+    width: 40px;
+    border: 8px solid rgba(255,255,255,.5);
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+  }
+   
+  .loader:before {
+    animation: animate 2s infinite linear;
+  }
+   
+  @keyframes animate {
+    0% {
+      transform: rotate(0) skew(0);
+    }
+     
+    100% {
+      transform: rotate(180deg) skew(360deg);
+    }
+  }
+   
+   
+  .loader:after {
+    animation: animate2 2s infinite linear;
+  }
+   
+  @keyframes animate2 {
+    0% {
+      transform: rotate(0) skew(0);
+    }
+     
+    100% {
+      transform: rotate(-180deg) skew(-360deg);
+    }
+  }
+
 * {
     margin: 0;
     padding: 0;
@@ -18,6 +78,10 @@ body {
     background-image: url('images/fon1.jpg');
     background-size: cover;
     padding-bottom: 100px;
+
+    background-attachment: fixed; /* Фоновое изображение фиксируется */
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .menu {
     width: 90%;
@@ -72,13 +136,44 @@ li {
     margin-top: 150px;
     text-transform: uppercase;
 }
+.cont_text {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+ 
+}
 .second_name {
+    width: 22ch;
     color: white;
     font-size: 60px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
-    margin-top: 20px;
+    white-space: nowrap; /* не переносить текст на другую строку */
+    overflow: hidden; /* скрываем переполнение контентом */
+    border-right: 3px solid white; /* рисуем курсор */
+    animation: cursor 0.75s step-end infinite, printed_text 3s steps(22);
 }
+
+@keyframes cursor {
+  0% {
+    border-color: white;
+  }
+
+  50% {
+    border-color: transparent;
+  }
+
+  100% {
+    border-color: white;
+  }
+}
+
+@keyframes printed_text {
+  from {
+    width: 0;
+  }
+}
+
 .btn {
     width: 350px;
     text-align: center;
@@ -115,7 +210,7 @@ li {
         font-size: 15px;
     }
     .name {
-        font-size: 40px;
+        font-size: 37px;
         margin-top: 100px;
     }
     .second_name {
@@ -125,17 +220,17 @@ li {
 }
 @media (max-width: 425px) { 
     .menu_ul {
-        font-size: 14px;
+        font-size: 16px;
     }
     .name {
-        font-size: 37px;
+        font-size: 30px;
         margin-top: 100px;
     }
     .second_name {
-        font-size: 24px;
+        font-size: 22px;
     }
     .btn {
-        width: 250px;
+        width: 230px;
         font-size: 18px;
         padding: 15px;
     }
@@ -144,12 +239,12 @@ li {
         height: 40px;
     }
     .tg {
-        width: 40px;
-        height: 40px;
+        width: 45px;
+        height: 45px;
     }
     .inst {
-        width: 40px;
-        height: 40px;
+        width: 45px;
+        height: 45px;
     }
 }
 
@@ -692,3 +787,19 @@ a:hover {
     filter: drop-shadow(3px 5px 5px #000);
     transition-duration: 0.3s;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

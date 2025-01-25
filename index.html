@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="loaderArea">
+        <div class="loader"></div>
+     </div>
+
     <header class="header">
         <div class="block">
             <nav class="menu">
@@ -23,7 +27,7 @@
                 <img src="images/ico.png" alt="Иконка" class="ico">
     
                 <div class="sety">
-                    <a href="https://t.me/takepromanadger" target="_blank"><img src="images/tg.png" alt="Телеграмм" class="tg" data-aos="fade"></a>
+                    <a href="https://t.me/takepromanager" target="_blank"><img src="images/tg.png" alt="Телеграмм" class="tg" data-aos="fade"></a>
                     <a href="https://www.instagram.com/ivanov_victory?igsh=MXdvcThrNGtueXl5aQ==" target="_blank"><img src="images/inst.png" alt="Инстаграмм" class="inst" data-aos="fade"></a>
                 </div>
             </nav>
@@ -31,9 +35,12 @@
         
 
         <h1 class="name" data-aos="fade-right">Разработка сайтов</h1>
-        <h2 class="second_name" data-aos="fade-up">Помогаем, а не продаём!</h2>
 
-        <a href="https://t.me/takepromanadger" target="_blank"><div class="btn"  data-aos="zoom-in">Бесплатная консультация</div></a>
+        <div class="cont_text">
+            <h2 class="second_name" data-aos="fade-up">Помогаем, а не продаём!</h2>
+        </div>
+        
+        <a href="https://t.me/takepromanager" target="_blank"><div class="btn"  data-aos="zoom-in">Бесплатная консультация</div></a>
     </header>
 
     <section class="about">
@@ -239,7 +246,7 @@
             <div class="contacts_a" data-aos="fade-left">
                 <div class="sety">
                     <a href="tel:+375447119740"><img src="images/tel.png" alt="Телефон" class="tel"></a>
-                    <a href="https://t.me/takepromanadger"><img src="images/tg.png" alt="Телеграмм" class="tg tg_2"></a>
+                    <a href="https://t.me/takepromanager"><img src="images/tg.png" alt="Телеграмм" class="tg tg_2"></a>
                     <a href="https://www.instagram.com/ivanov_victory?igsh=MXdvcThrNGtueXl5aQ=="><img src="images/inst.png" alt="Инстаграмм" class="inst inst_2"></a>
                 </div>
             </div>
@@ -258,6 +265,15 @@
         AOS.init({
             duration: 800, // продолжительность анимации
             once: true, // анимация будет выполнена только один раз
+        });
+    </script>
+
+    <script>
+        $(window).on('load', function () {
+        $preloader = $('.loaderArea'),
+            $loader = $preloader.find('.loader');
+        $loader.fadeOut();
+        $preloader.delay(450).fadeOut('slow');
         });
     </script>
 </body>
