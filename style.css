@@ -9,13 +9,15 @@
     z-index: 100000;
   }
   .loader {
-    height: 40px;
-    width: 40px;
+    height: 150px;
+    width: 150px;
     position: absolute;
     left: 50%;
-    margin-left: -20px;
+    margin-left: -75px;
     top: 50%;
-    margin-top: -20px;
+    /* transform: translate(-50%, -50%); */
+    margin-top: -75px;
+    overflow: hidden;
   }
    
   .loader:before,
@@ -26,7 +28,9 @@
     border: 8px solid rgba(255,255,255,.5);
     border-radius: 10px;
     position: absolute;
-    top: 0;
+    top: 50px;
+    left: 50px;
+
   }
    
   .loader:before {
@@ -61,11 +65,12 @@
 * {
     margin: 0;
     padding: 0;
-}
-body {
-    width: 100%;
     box-sizing: border-box;
     overflow-x: hidden;
+}
+body {
+    /* width: 100%; */
+    box-sizing: border-box;
 }
 .block {
     width: 100%;
@@ -79,9 +84,9 @@ body {
     background-size: cover;
     padding-bottom: 100px;
 
-    background-attachment: fixed; /* Фоновое изображение фиксируется */
+    /* background-attachment: fixed; 
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
 }
 .menu {
     width: 90%;
@@ -230,9 +235,9 @@ li {
         font-size: 22px;
     }
     .btn {
-        width: 230px;
-        font-size: 18px;
-        padding: 15px;
+        width: 250px;
+        font-size: 15px;
+        padding: 12px;
     }
     .ico {
         width: 60px;
